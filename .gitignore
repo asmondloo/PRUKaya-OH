@@ -1,4 +1,4 @@
-/.env
+
 /pycache
 bot/handler/__pychache__/*
 __pycache__/
