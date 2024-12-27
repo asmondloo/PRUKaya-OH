@@ -1,0 +1,56 @@
+{
+    "modules": [
+        {
+            "title": "Insurance 101 for Young Adults",
+            "submodules": [
+                {
+                    "title": "What is Insurance?",
+                    "content": "Insurance is a financial product that helps manage risks by providing compensation in case of unexpected events. By paying a small premium now, you can avoid the financial burden of a large, unforeseen expense, such as a car accident or a medical emergency. Think of it as a safety net that protects your financial well-being."
+                },
+                {
+                    "title": "Types of Insurance",
+                    "content": "As a young adult, several types of insurance might be relevant to you: \n\n- Health Insurance: Covers medical expenses, including doctor visits, hospital stays, and medications. \n- Auto Insurance: Protects you against financial loss if you're involved in a car accident or your vehicle is damaged. \n- Renters Insurance: Provides coverage for your personal belongings in a rented apartment or house. \n- Life Insurance: Offers financial protection for your loved ones in case of your untimely death, ensuring they are taken care of financially."
+                }
+            ]
+        },
+        {
+            "title": "Managing Your Budget with Insurance",
+            "submodules": [
+                {
+                    "title": "Why Insurance Should Be Part of Your Budget",
+                    "content": "Incorporating insurance into your budget is essential to safeguard against life's uncertainties. Without insurance, a single unexpected event could result in significant financial hardship. By planning ahead and allocating funds for insurance premiums, you ensure that you are protected without stretching your wallet. This proactive approach helps maintain financial stability and peace of mind."
+                },
+                {
+                    "title": "Tips to Save on Premiums",
+                    "content": "There are several ways to save on insurance premiums without sacrificing coverage: \n\n- Bundle Policies: Combine different types of insurance (e.g., auto and renters) with the same provider to receive a discount. \n- Compare Quotes: Shop around and compare quotes from multiple insurers to find the best rate. \n- Increase Deductibles: Opt for a higher deductible to lower your premium. Just ensure you have enough savings to cover the deductible in case of a claim. \n- Maintain a Good Credit Score: Insurers often use credit scores to determine premiums, so maintaining a good credit score can result in lower rates."
+                }
+            ]
+        },
+        {
+            "title": "Digital Tools for Insurance Management",
+            "submodules": [
+                {
+                    "title": "Mobile Apps and Online Portals",
+                    "content": "Managing your insurance policies has never been easier with the advent of mobile apps and online portals. These tools allow you to: \n\n- View Coverage: Check your policy details and coverage limits anytime, anywhere. \n- File Claims: Submit and track claims easily through your mobile device or computer. \n- Make Payments: Pay your premiums online, set up automatic payments, and receive payment reminders. \n- Get Support: Access customer service and support resources at your fingertips."
+                },
+                {
+                    "title": "Automating Insurance Payments",
+                    "content": "Setting up automated payments for your insurance premiums can simplify your financial management. Automated payments ensure you never miss a payment, helping you avoid late fees and maintain continuous coverage. This hassle-free approach allows you to focus on other important aspects of your life without worrying about due dates."
+                }
+            ]
+        },
+        {
+            "title": "Life Events and Insurance Needs",
+            "submodules": [
+                {
+                    "title": "Getting Married",
+                    "content": "Marriage is a significant life event that can impact your insurance needs. When you get married, you might need to: \n\n- Merge Health Plans: Evaluate your options and decide whether to combine health insurance plans with your spouse. \n- Update Life Insurance: Ensure that your spouse is named as a beneficiary on your life insurance policy, and consider increasing your coverage to protect your family's future."
+                },
+                {
+                    "title": "Buying a Home",
+                    "content": "Purchasing a home is one of the biggest investments you'll make. Homeowners insurance is essential to protect this investment. It covers: \n\n- Property Damage: Repairs or rebuilds your home if it is damaged by covered events such as fire, storms, or vandalism. \n- Personal Belongings: Replaces or repairs your personal items if they are stolen or damaged. \n- Liability Protection: Provides coverage if someone is injured on your property and you are found legally responsible."
+                }
+            ]
+        }
+    ]
+}

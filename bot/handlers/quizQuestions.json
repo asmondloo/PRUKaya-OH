@@ -1,0 +1,120 @@
+{
+    "Insurance 101 for Young Adults": [
+        {
+            "question": "What is the primary purpose of insurance?",
+            "options": ["Saving money", "Risk management", "Investment", "Buying assets"],
+            "correctAnswer": "B"
+        },
+        {
+            "question": "Which type of insurance is typically unnecessary for a young adult?",
+            "options": ["Life Insurance", "Travel Insurance", "Health Insurance", "Disability Insurance"],
+            "correctAnswer": "A"
+        },
+        {
+            "question": "At what age should one consider buying life insurance?",
+            "options": ["As a teenager", "After retirement", "Upon starting a career", "When buying a house"],
+            "correctAnswer": "C"
+        },
+        {
+            "question": "Which policy is most important for a young professional?",
+            "options": ["Health Insurance", "Life Insurance", "Vehicle Insurance", "Home Insurance"],
+            "correctAnswer": "A"
+        },
+        {
+            "question": "How does health insurance benefit young adults?",
+            "options": ["Covers only dental expenses", "Provides coverage for preventive care and emergencies", "Is optional if you are healthy", "Covers only gym memberships"],
+            "correctAnswer": "B"
+        },
+        {
+            "question": "What is one of the main benefits of having auto insurance?",
+            "options": ["Free car washes", "Financial protection against car accidents", "Increased car value", "Reduced gas prices"],
+            "correctAnswer": "B"
+        },
+        {
+            "question": "Why might renters insurance be important for a young adult?",
+            "options": ["Covers the building structure", "Provides coverage for personal belongings and liability", "Required by law", "Increases rental value"],
+            "correctAnswer": "B"
+        },
+        {
+            "question": "What is a key reason for a young adult to consider life insurance?",
+            "options": ["To fund vacations", "To provide financial support to dependents", "To pay off student loans", "Not necessary until retirement"],
+            "correctAnswer": "B"
+        }
+    ],
+    "Managing Your Budget with Insurance": [
+        {
+            "question": "Why should insurance be included in your budget?",
+            "options": ["It is optional", "To cover unexpected losses", "To improve credit score", "To cover ongoing health expenses"],
+            "correctAnswer": "B"
+        },
+        {
+            "question": "What is a deductible in an insurance policy?",
+            "options": ["A type of premium", "A fixed expense", "An amount paid during a claim", "None of the above"],
+            "correctAnswer": "C"
+        },
+        {
+            "question": "How can bundling insurance policies save you money?",
+            "options": ["It reduces the need for multiple providers", "It increases your overall premium", "Insurers offer discounts for multiple policies", "It simplifies the payment process"],
+            "correctAnswer": "C"
+        },
+        {
+            "question": "What is a practical step to take when comparing insurance quotes?",
+            "options": ["Choosing the cheapest option", "Considering only well-known companies", "Comparing coverage options and premiums", "Ignoring customer reviews"],
+            "correctAnswer": "C"
+        },
+        {
+            "question": "How can maintaining a good credit score affect your insurance premiums?",
+            "options": ["Leads to higher premiums", "No effect", "Can result in lower premiums", "Makes you ineligible for insurance"],
+            "correctAnswer": "C"
+        },
+        {
+            "question": "What is an advantage of increasing your insurance deductible?",
+            "options": ["Higher monthly premiums", "Lower monthly premiums", "More frequent claims", "Reduced coverage"],
+            "correctAnswer": "B"
+        }
+    ],
+    "Digital Tools for Insurance Management": [
+        {
+            "question": "What is one benefit of using mobile apps for managing your insurance?",
+            "options": ["Higher insurance costs", "Increased paperwork", "Convenient access to policy information", "Limited customer support"],
+            "correctAnswer": "C"
+        },
+        {
+            "question": "How can online portals simplify managing your insurance?",
+            "options": ["By requiring in-person visits", "By offering real-time updates and online claims submission", "By limiting access to policy details", "By increasing response time for support"],
+            "correctAnswer": "B"
+        },
+        {
+            "question": "What is an advantage of setting up automated insurance payments?",
+            "options": ["Higher risk of late payments", "Ensures timely payments and continuous coverage", "More complicated budgeting", "No significant advantage"],
+            "correctAnswer": "B"
+        },
+        {
+            "question": "Which feature is commonly available in insurance mobile apps?",
+            "options": ["Virtual policy storage", "In-person support scheduling", "Reduced coverage options", "Manual claim submissions only"],
+            "correctAnswer": "A"
+        }
+    ],
+    "Life Events and Insurance Needs": [
+        {
+            "question": "How does getting married affect your health insurance needs?",
+            "options": ["No change is needed", "Merging health plans can provide better coverage options", "Health insurance becomes unnecessary", "Reduces overall insurance costs automatically"],
+            "correctAnswer": "B"
+        },
+        {
+            "question": "Why is life insurance important after getting married?",
+            "options": ["To fund travel plans", "To provide financial support for your spouse in case of your untimely death", "To increase your savings", "It becomes less important"],
+            "correctAnswer": "B"
+        },
+        {
+            "question": "What does homeowners insurance cover?",
+            "options": ["Only personal belongings", "Repairs for damage to the home and liability protection", "Routine home maintenance", "Increased property value"],
+            "correctAnswer": "B"
+        },
+        {
+            "question": "When buying a home, why is homeowners insurance critical?",
+            "options": ["It is optional", "Covers the property in case of damage or loss", "It guarantees a mortgage", "It is required for home improvements"],
+            "correctAnswer": "B"
+        }
+    ]
+}

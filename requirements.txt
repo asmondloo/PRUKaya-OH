@@ -1,0 +1,14 @@
+supabase==2.9.1
+pyTelegramBotAPI==4.23.0
+requests==2.32.3
+python-dotenv==1.0.1
+openai==0.28.0
+python-telegram-bot==20.6
+better_profanity
+python-dotenv
+flask
+langchain
+chromadb
+openai
+langchain-community
+langchain-core
