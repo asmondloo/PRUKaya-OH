@@ -20,7 +20,7 @@ from bot.handlers import insuranceHandler, agent_handler, modules_handlers
 
 logger = setup_logger()
 user_sessions = {}
-SESSION_TIMEOUT = timedelta(minutes=10)
+SESSION_TIMEOUT = timedelta(minutes=5)
 
 def clear_expired_sessions():
     now = datetime.now()
