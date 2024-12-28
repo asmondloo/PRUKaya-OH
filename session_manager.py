@@ -59,7 +59,6 @@ class SessionManager:
                 logger.info(f"[CREATE] Session {session_id}: Created for {username}.")
             else:
                 current_session = self.sessions[user_id]
-                # Check if session should be refreshed
                 if (now - current_session.last_active) > timedelta(minutes=2):  # Refresh after 2 minutes of inactivity
                     session_id = str(uuid.uuid4())
                     logger.info(f"[NEW] Session {session_id}: Created new session for {username} (old session expired).")
@@ -81,3 +80,7 @@ class SessionManager:
     def add_to_chat_history(self, user_id: int, role: str, content: str):
         if user_id in self.sessions:
             self.sessions[user_id].chat_history.append(ChatMessage(role=role, content=content))
+            
+    def clear_chat_history(self, user_id: int):
+        if user_id in self.sessions:
+            self.sessions[user_id].chat_history = []
