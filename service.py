@@ -74,7 +74,7 @@ def main():
             
         finally:
             session.processing = False
-            session_manager.clear_chat_history(user_id)
+            
 
     telebot_bot.polling(none_stop=True, timeout=120)
 
