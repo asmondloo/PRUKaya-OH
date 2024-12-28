@@ -2,7 +2,7 @@
 
 1. Install the required dependencies:  
    ```bash
-   pip install -r requirements.txt
+   pip install -r requirements.txt --user
 2. Run the RAG Flask Server 
    ```bash
    python rag_pipeline.py
