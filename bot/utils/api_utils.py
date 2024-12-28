@@ -41,9 +41,10 @@ def call_openai_api(prompt, user_id):
         cleaned_output = clean_output(ai_response)
 
         user_conversations[user_id].append({"role": "assistant", "content": cleaned_output})
-        if clean_output == "I'm sorry, I can't answer that as it is against my guidelines":
+        if "I can't answer that" in clean_output:
             logger.warning(f"Flagged response for user {user_id}: {prompt}")
         return cleaned_output
 
-    except Exception:
+    except Exception as e:
+        logger.error(f"Error occurred while processing user query: {e}")
         return "PRUKaya is not available now, please try again later."
