@@ -41,7 +41,7 @@ def call_openai_api(prompt, user_id):
         cleaned_output = clean_output(ai_response)
 
         user_conversations[user_id].append({"role": "assistant", "content": cleaned_output})
-        if "I can't answer that" in clean_output:
+        if "I can't answer that" in cleaned_output:
             logger.warning(f"Flagged response for user {user_id}: {prompt}")
         return cleaned_output
 
