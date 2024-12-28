@@ -1,8 +1,24 @@
 import threading
 import time
-from typing import Dict
+from typing import Dict, List
 import uuid
-from datetime import timedelta
+from datetime import timedelta, datetime
+from dataclasses import dataclass, field
+from bot.utils.logger_utils import setup_logger
+
+logger = setup_logger()
+
+@dataclass
+class ChatMessage:
+    role: str
+    content: str
+
+@dataclass
+class UserSession:
+    session_id: str
+    last_active: datetime
+    processing: bool = False
+    chat_history: List[ChatMessage] = field(default_factory=list)
 
 class SessionManager:
     def __init__(self, timeout_minutes: int = 5):

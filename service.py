@@ -1,6 +1,5 @@
 from datetime import datetime
 from termcolor import colored
-from dataclasses import dataclass, field
 from typing import List
 
 from better_profanity import profanity
@@ -16,18 +15,6 @@ from session_manager import SessionManager
 
 
 logger = setup_logger()
-
-@dataclass
-class ChatMessage:
-    role: str
-    content: str
-
-@dataclass
-class UserSession:
-    session_id: str
-    last_active: datetime
-    processing: bool = False
-    chat_history: List[ChatMessage] = field(default_factory=list)
 
 def contains_inappropriate_content(message):
     profanity.load_censor_words()
