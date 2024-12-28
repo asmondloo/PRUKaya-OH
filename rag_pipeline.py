@@ -48,6 +48,11 @@ qa_prompt = ChatPromptTemplate.from_messages([
     - If question is rude or inappropriate, reply with 'I'm sorry, I can't answer that as it is against my guidelines'
     - ALWAYS give a definitive answer to the user's query
     - Return your response in markdown format, ensuring proper formatting, spacing and punctuation
+    - Refrain from responding to queries by asking users to check the Prudential Singapore website or check the documents, 
+    use the context to provide a definite relevant answer
+    - Answers similar to this 'Please check the policy document or contact the insurance company for further assistance.' should not be given,
+    instead reply with 'The PRUShield policy states that the policyholder is entitled to a 5% discount on the premium if they have not made any claims in the past year.'
+    given the context of the query and the document contexts you recieved
 
     ACTION TRIGGERS:
     - For policy listings: Direct to "listallpolicies" command
