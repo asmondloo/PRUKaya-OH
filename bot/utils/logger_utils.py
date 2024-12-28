@@ -1,7 +1,7 @@
 import logging
 
 def setup_logger():
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger('PRUKAYA_BOT')
     logger.setLevel(logging.INFO)
 
     if not logger.hasHandlers():
