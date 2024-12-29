@@ -19,6 +19,7 @@ class UserSession:
     last_active: datetime
     processing: bool = False
     chat_history: List[ChatMessage] = field(default_factory=list)
+    username: str = ""
 
 class SessionManager:
     def __init__(self, timeout_minutes: int = 5):
@@ -44,7 +45,8 @@ class SessionManager:
             
             for user_id in expired_users:
                 session_id = self.sessions[user_id].session_id
-                logger.info(f"[CLEAR] Session {session_id}: Cleared due to inactivity after {self.timeout.total_seconds()/60} minutes.")
+                session_user = self.sessions[user_id].username
+                logger.info(f"[CLEAR] Session {session_id}: Cleared for user '{session_user}' due to inactivity after {self.timeout.total_seconds()/60} minutes.")
                 del self.sessions[user_id]
     
     def get_or_create_session(self, user_id: int, username: str) -> UserSession:
@@ -54,7 +56,8 @@ class SessionManager:
                 session_id = str(uuid.uuid4())
                 self.sessions[user_id] = UserSession(
                     session_id=session_id,
-                    last_active=now
+                    last_active=now,
+                    username=username
                 )
                 logger.info(f"[CREATE] Session {session_id}: Created for {username}.")
             else:
@@ -64,7 +67,8 @@ class SessionManager:
                     logger.info(f"[NEW] Session {session_id}: Created new session for {username} (old session expired).")
                     self.sessions[user_id] = UserSession(
                         session_id=session_id,
-                        last_active=now
+                        last_active=now,
+                        username=username
                     )
                 else:
                     current_session.last_active = now
@@ -76,6 +80,10 @@ class SessionManager:
         if user_id in self.sessions:
             return self.sessions[user_id].chat_history
         return []
+    def get_active_usernames(self) -> List[str]:
+        with self.lock:
+            return [session.username for session in self.sessions.values()]
+
 
     def add_to_chat_history(self, user_id: int, role: str, content: str):
         if user_id in self.sessions:
