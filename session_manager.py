@@ -45,14 +45,8 @@ class SessionManager:
             
             for user_id in expired_users:
                 session_id = self.sessions[user_id].session_id
-<<<<<<< HEAD
                 session_user = self.sessions[user_id].username
                 logger.info(f"[CLEAR] Session {session_id}: Cleared for user '{session_user}' due to inactivity after {self.timeout.total_seconds()/60} minutes.")
-                self.sessions[user_id].chat_history = []
-=======
-                session_user = self.sessions[user_id].username
-                logger.info(f"[CLEAR] Session {session_id}: Cleared for user '{session_user}' due to inactivity after {self.timeout.total_seconds()/60} minutes.")
->>>>>>> 21f7287036331d0785f529117ad80e8f7dc2b31d
                 del self.sessions[user_id]
                 
 
