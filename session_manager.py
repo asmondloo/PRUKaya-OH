@@ -46,7 +46,8 @@ class SessionManager:
             for user_id in expired_users:
                 session_id = self.sessions[user_id].session_id
 <<<<<<< HEAD
-                logger.info(f"[CLEAR] Session {session_id}: Cleared due to inactivity after {self.timeout.total_seconds()/60} minutes.")
+                session_user = self.sessions[user_id].username
+                logger.info(f"[CLEAR] Session {session_id}: Cleared for user '{session_user}' due to inactivity after {self.timeout.total_seconds()/60} minutes.")
                 self.sessions[user_id].chat_history = []
 =======
                 session_user = self.sessions[user_id].username
@@ -64,6 +65,7 @@ class SessionManager:
                 self.sessions[user_id] = UserSession(
                     session_id=session_id,
                     last_active=now,
+                    username=username,
                     username=username
                 )
                 logger.info(f"[CREATE] Session {session_id}: Created for {username}.")
@@ -87,6 +89,10 @@ class SessionManager:
         if user_id in self.sessions:
             return self.sessions[user_id].chat_history
         return []
+    def get_active_usernames(self) -> List[str]:
+        with self.lock:
+            return [session.username for session in self.sessions.values()]
+
     def get_active_usernames(self) -> List[str]:
         with self.lock:
             return [session.username for session in self.sessions.values()]
