@@ -42,7 +42,7 @@ def main():
             return
         user_id = message.chat.id
         username = message.chat.username or "Unknown User"
-        user_message = message.text
+        user_message = message.text 
 
         session = session_manager.get_or_create_session(user_id, username)
         

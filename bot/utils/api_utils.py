@@ -48,3 +48,11 @@ def call_openai_api(prompt, user_id):
     except Exception as e:
         logger.error(f"Error occurred while processing user query: {e}")
         return "PRUKaya is not available now, please try again later."
+    
+    
+def clear_conversation_history(user_id):
+        if user_id in user_conversations:
+            del user_conversations[user_id]
+            logger.info(f"Conversation history cleared for user {user_id}.")
+        else:
+            logger.info(f"No conversation history found for user {user_id}.")

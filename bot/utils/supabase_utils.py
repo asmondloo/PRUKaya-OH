@@ -10,6 +10,9 @@ insurance_categories = categories_response.data
 products_response = supabase.table("insurance_products").select("*").execute()
 insurance_products = products_response.data
 
+provider_response = supabase.table("insurance_providers").select("*").execute()
+insurance_providers = provider_response.data
+
 
 agents = supabase.table("agent").select("*").execute().data
 
