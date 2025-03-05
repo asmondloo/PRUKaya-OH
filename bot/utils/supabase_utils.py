@@ -18,9 +18,17 @@ financial_categories = supabase.table("financial_products_category").select("*")
 financial_products = supabase.table("financial_products").select("*").execute().data
 banks = supabase.table("banks").select("*").execute().data
 
+all_users = supabase.table("telegram_users").select("*").execute().data
+
 
 agents = supabase.table("agent").select("*").execute().data
 
 
 def getAgentPicture(picURL):
     return supabase.storage.from_('FA').get_public_url(picURL)
+
+
+def add_user_todb(username):
+    res = supabase.table("telegram_users").insert([{"user_id": username}]).execute()
+    
+    

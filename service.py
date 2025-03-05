@@ -8,6 +8,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 
 from bot import telebot_bot
 from bot.utils.api_utils import call_openai_api
+from bot.utils.supabase_utils import add_user_todb
 from bot.utils.logger_utils import setup_logger
 from bot.handlers import insuranceHandler, agent_handler, modules_handlers, investmentHandler, reportHandler, edu_links_handler
 
@@ -23,6 +24,14 @@ def contains_inappropriate_content(message):
 def main():
     logger.info("PruKaya bot is now running.")
     session_manager = SessionManager(timeout_minutes=5)
+    
+    @telebot_bot.message_handler(commands=['start'])
+    def start(message):
+        user_id = message.chat.id
+        username = message.chat.username or "Unknown User"
+        session = session_manager.get_or_create_session(user_id, username)
+        telebot_bot.send_message(user_id, "Welcome, I am PruKaya! How can I assist you today?")
+        add_user_todb(user_id)
 
     @telebot_bot.message_handler(commands=['buyinsurance'])
     def send_welcome(message):
