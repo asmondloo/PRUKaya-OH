@@ -1,0 +1,116 @@
+[
+    {
+        "id": 1,
+        "name": "CPF",
+        "links": [
+            {
+                "id": 101,
+                "name": "Plan with CPF",
+                "url": "https://www.cpf.gov.sg/member/plan-with-cpf",
+                "description": "This guide helps you plan your CPF savings for retirement, housing, and healthcare. It offers step-by-step instructions to make the most of your CPF funds."
+            },
+            {
+                "id": 102,
+                "name": "Growing Your Savings with CPF",
+                "url": "https://www.cpf.gov.sg/member/growing-your-savings",
+                "description": "Discover ways to enhance your CPF savings through various schemes and investment options. This resource provides tips on maximizing your returns."
+            },
+            {
+                "id": 103,
+                "name": "Mortgage Calculator",
+                "url": "https://www.cpf.gov.sg/member/tools-and-services/calculators/mortgage-calculator",
+                "description": "Use this calculator to estimate your monthly housing loan repayments or determine the maximum loan amount you can afford. Simply input your loan amount, interest rate, and repayment period."
+            },
+            {
+                "id": 104,
+                "name": "Education Loan Repayment Calculator",
+                "url": "https://www.cpf.gov.sg/member/tools-and-services/calculators/education-loan-repayment-calculator",
+                "description": "Calculate your education loan's repayment period or monthly instalments. Enter your loan amount, interest rate, and choose to calculate either the monthly instalment or the repayment duration."
+            },
+            {
+                "id": 105,
+                "name": "CPF Housing Usage Calculator",
+                "url": "https://www.cpf.gov.sg/member/tools-and-services/calculators/cpf-housing-usage",
+                "description": "Find out how much of your CPF Ordinary Account savings you can use for a property purchase. Provide details like your age, property type, and loan type to get accurate estimates."
+            },
+            {
+                "id": 106,
+                "name": "Home Purchase Planner",
+                "url": "https://www.cpf.gov.sg/member/tools-and-services/planners/home-purchase",
+                "description": "Estimate your home purchase budget and housing loan amount, and see how it impacts your retirement. Input your income, savings, and monthly expenses to get a comprehensive plan."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "MAS",
+        "links": [
+            {
+                "id": 201,
+                "name": "Investing in Savings Bonds",
+                "url": "https://www.mas.gov.sg/bonds-and-bills/investing-in-singapore-savings-bonds",
+                "description": "Learn how to invest in Singapore Savings Bonds, including the benefits, application process, and interest rates."
+            },
+            {
+                "id": 202,
+                "name": "Savings Bonds Calculator",
+                "url": "https://www.mas.gov.sg/bonds-and-bills/investing-in-singapore-government-securities/sgs-bond-calculator",
+                "description": "Calculate your potential returns from Singapore Savings Bonds. Input the bond amount and tenure to see projected earnings."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "MyMoneySense",
+        "links": [
+            {
+                "id": 301,
+                "name": "Expense Manager",
+                "url": "https://www.mymoneysense.gov.sg/expense-manager",
+                "description": "Manage your expenses by tracking your spending habits, setting budgets, and monitoring financial goals."
+            },
+            {
+                "id": 302,
+                "name": "Buying Your First Home",
+                "url": "https://www.mymoneysense.gov.sg/buying-a-house",
+                "description": "A comprehensive guide to purchasing your first home, covering financial considerations, planning phases, and budgeting tips."
+            },
+            {
+                "id": 303,
+                "name": "Home Buying Guide",
+                "url": "https://www.mymoneysense.gov.sg/buying-a-house/purchase-guide",
+                "description": "Detailed information on the home buying process, including planning, purchasing costs, and financial considerations."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "IRAS",
+        "links": [
+            {
+                "id": 401,
+                "name": "E-Learning",
+                "url": "https://www.iras.gov.sg/quick-links/e-learning",
+                "description": "Access IRAS's e-learning resources to understand tax obligations, filing processes, and available reliefs."
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "HDB",
+        "links": [
+            {
+                "id": 501,
+                "name": "Calculate Housing Budget",
+                "url": "https://homes.hdb.gov.sg/home/calculator/budget",
+                "description": "Check your housing budget with loan estimates from HDB and participating financial institutions. Input your CPF and cash savings to determine affordability."
+            },
+            {
+                "id": 502,
+                "name": "Create Payment Plan",
+                "url": "https://homes.hdb.gov.sg/home/calculator/payment-plan",
+                "description": "Calculate your payments at each stage of your flat buying journey. This tool helps you understand the financial commitments during the purchase process."
+            }
+        ]
+    }
+]

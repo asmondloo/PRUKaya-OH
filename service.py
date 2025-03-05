@@ -9,7 +9,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 from bot import telebot_bot
 from bot.utils.api_utils import call_openai_api
 from bot.utils.logger_utils import setup_logger
-from bot.handlers import insuranceHandler, agent_handler, modules_handlers
+from bot.handlers import insuranceHandler, agent_handler, modules_handlers, edu_links_handler
 
 from session_manager import SessionManager
 
