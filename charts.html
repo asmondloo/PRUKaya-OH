@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Singaporean Youth Financial Challenges</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .chart-container {
+            margin-bottom: 40px;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .chart-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .chart-source {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart-title">Financial Literacy Among Singaporean Youths</div>
+        <canvas id="financialLiteracyChart"></canvas>
+        <div class="chart-source">Source: Financial Planning Association of Singapore (2023)</div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-title">Reasons for Low Investment Participation</div>
+        <canvas id="investmentParticipationChart"></canvas>
+        <div class="chart-source">Source: Compiled from Multiple Financial Surveys (2024)</div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-title">Savings and Investment Preparedness</div>
+        <canvas id="savingsChart"></canvas>
+        <div class="chart-source">Source: UOB Asean Consumer Sentiment Study (2024)</div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-title">Digital Finance Usage Among Youths</div>
+        <canvas id="digitalFinanceChart"></canvas>
+        <div class="chart-source">Source: Digital Banking Usage Survey (2023)</div>
+    </div>
+
+    <script>
+        // Function to create charts with percentage display
+        function createChart(canvasId, labels, data, colors) {
+            return new Chart(document.getElementById(canvasId), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: colors
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { 
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Percentage (%)'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Financial Literacy Chart
+        createChart('financialLiteracyChart', 
+            ['Understand Personal Finance', 'Limited Understanding'],
+            [32, 68],
+            ['#2E8B57', '#8B0000']  // Darker green and darker red
+        );
+
+        // Investment Participation Chart
+        createChart('investmentParticipationChart', 
+            ['Lack of Knowledge', 'Fear of Losses', 'Insufficient Income', 'Complex Landscape'],
+            [45, 25, 20, 10],
+            '#00008B'  // Dark blue
+        );
+
+        // Savings Chart
+        createChart('savingsChart', 
+            ['Not Saving/Investing', 'Actively Saving/Investing'],
+            [25, 75],
+            ['#8B4513', '#006400']  // Saddle brown and dark green
+        );
+
+        // Digital Finance Usage Chart
+        createChart('digitalFinanceChart', 
+            ['Use Digital Banking', 'Use for Financial Planning'],
+            [72, 28],
+            ['#4B0082', '#8B0000']  // Indigo and dark red
+        );
+    </script>
+</body>
+</html>

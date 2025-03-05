@@ -9,6 +9,7 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.vectorstores import Chroma
 from langchain.retrievers.multi_query import MultiQueryRetriever
+from pydantic import BaseModel
 
 load_dotenv(verbose=False)
 
@@ -107,5 +108,81 @@ async def handle_query():
     
     return jsonify({"response": response})
 
+
+report_generation_prompt = """
+You are a financial savings expert designed to guide young Singaporeans toward smarter financial decisions. Given the user's financial profile in the below variables, analyze their situation and generate a well-structured report. 
+The report should be formatted in Markdown for readability and clarity.
+
+Report Requirements:
+1. User's Financial Overview
+   - Summarize their age, gender, monthly income, and expenses.
+   - Highlight key observations regarding their financial standing.
+
+2. Savings & Investment Analysis
+   - Evaluate the feasibility of their savings goal based on income and expenses.
+   - Identify opportunities for optimizing savings.
+
+3. Personalized Financial Advice
+   - Recommend a tailored savings or investment plan.
+   - Suggest suitable financial products or strategies.
+   - Provide actionable steps to enhance financial stability and growth.
+
+Variables Provided:
+- {age}
+- {gender}
+- {monthly_income}
+- {expenses}
+- {savings_goal}
+
+Response Rules:
+- Keep responses under 500 words.
+- Provide clear, practical financial advice with actionable steps.
+- Answer must be relevant to Singaporean context and financial products.
+- Response must be as if communicating to the user directly, suggesting specific actions and products.
+- Be neutral and unbiased. 
+- Suggest very specific products or services while maintaining neutrality.
+- Use markdown for formatting.
+- Avoid recommending agent consultations or directing users to external websites.
+"""
+
+class SavingGoals(BaseModel):
+    age: int
+    gender: str
+    monthly_income: float
+    expenses: float
+    savings_goal: str
+
+from flask import request, jsonify
+from pydantic import ValidationError
+
+@app.route('/generate_report', methods=['POST'])
+def generate_report():
+    try:
+        # Parse the JSON payload from the request
+        data = request.get_json()
+
+        # Validate the payload using the SavingGoals Pydantic model
+        saving_goals = SavingGoals(**data)
+
+        # Format the prompt using the validated inputs
+        prompt = report_generation_prompt.format(
+            age=saving_goals.age,
+            gender=saving_goals.gender,
+            monthly_income=saving_goals.monthly_income,
+            expenses=saving_goals.expenses,
+            savings_goal=saving_goals.savings_goal
+        )
+
+        # Generate the report using the LLM
+        response = llm.generate([prompt])  # Assuming `llm.generate` is synchronous
+        return jsonify({"response": response.generations[0][0].text.strip()})
+
+    except ValidationError as e:
+        # Handle validation errors
+        return jsonify({"error": f"Invalid input: {e}"}), 400
+    except Exception as e:
+        # Handle other errors
+        return jsonify({"error": f"An unexpected error occurred: {str(e)}"}), 500
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,  use_reloader=False)

@@ -49,7 +49,47 @@ def call_openai_api(prompt, user_id):
         logger.error(f"Error occurred while processing user query: {e}")
         return "PRUKaya is not available now, please try again later."
     
+import aiohttp  # For async HTTP requests
+import asyncio
+
+async def call_generate_report_api(user_profile):
+    """
+    Calls the generate_report API to get a personalized financial report.
     
+    Args:
+        user_profile (dict): A dictionary containing user data (age, gender, monthly_income, expenses, savings_goal).
+    
+    Returns:
+        str: The generated report text or an error message.
+    """
+    try:
+        # Define the API URL
+        API_URL = "http://localhost:5000/generate_report"
+        
+        # Prepare the payload
+        payload = {
+            "age": user_profile.get("age"),
+            "gender": user_profile.get("gender"),
+            "monthly_income": user_profile.get("monthly_income"),
+            "expenses": user_profile.get("expenses"),
+            "savings_goal": user_profile.get("savings_goal")
+        }
+
+        # Make the asynchronous POST request to the API
+        async with aiohttp.ClientSession() as session:
+            async with session.post(API_URL, json=payload) as response:
+                if response.status == 200:
+                    response_data = await response.text()  # Assuming the API returns plain text
+                    return response_data.strip()
+                else:
+                    logger.error(f"API returned status code {response.status}")
+                    return "Failed to generate the report. Please try again later."
+
+    except Exception as e:
+        logger.error(f"Error occurred while generating report: {e}")
+        return "Failed to generate the report. Please try again later."
+
+
 def clear_conversation_history(user_id):
         if user_id in user_conversations:
             del user_conversations[user_id]

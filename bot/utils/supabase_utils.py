@@ -14,6 +14,11 @@ provider_response = supabase.table("insurance_providers").select("*").execute()
 insurance_providers = provider_response.data
 
 
+financial_categories = supabase.table("financial_products_category").select("*").execute().data
+financial_products = supabase.table("financial_products").select("*").execute().data
+banks = supabase.table("banks").select("*").execute().data
+
+
 agents = supabase.table("agent").select("*").execute().data
 
 
